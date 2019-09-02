@@ -1,0 +1,18 @@
+#%RAML 1.0 Trait
+
+queryParameters:
+  filter?:
+    description: |
+      By the default all the fields are returned - **\*all**. However we may remove some of them by appliying list with the minus in front of the name - **-description** or ***all,-description**. When we wan't specify only expected fields we may list them seprated by the comma - **summary,comment**.
+    default: *all
+    type: string
+    examples: 
+      defaultFilter:
+        displayName: Default Filter
+        value: "*all"
+      positiveFilter:
+        displayName: Positive Filter
+        value: "summary,comment"
+      negativeFilter:
+        displayName: Negative Filter
+        value: "-description"
